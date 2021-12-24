@@ -17,40 +17,81 @@ body {
   color: #FFF;
 }
 
+header{
+  position: fixed;
+  top:0;
+  left: 0;
+}
+
 header .container {
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 header .logo {
-  margin-left: 5px;
-  color: var(--vermelho);
-  font-family: 'Arial Black', Times;
-  font-size: 40px;
+  height: 35px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100vw;
 }
 
 header nav a {
   text-decoration: none;
   color: #AAA;
-  margin-right: 10px;
+  margin-left: 25px;
+  transition: 200ms;
 }
 
 header nav a:hover {
+  filter: brightness(0.8);
+}
+
+header nav a.active {
   color: #FFF;
 }
 
+header nav a.active:hover {
+  filter: initial;
+}
+
+header .configuration {
+  position: absolute;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .configuration span {
+  margin-left: 25px;
+}
+
+header .configuration span:last-child {
+  margin-left: 3px;
+}
+.avatar {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-image: url(../img/avatar.png);
+  background-size: contain;
+  border-radius: 4px;
+}
+
 .container {
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 /* ELEMENTOS FILME PRINCIPAL */
 
 .filme-principal {
-  font-size: 16px;
-  background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)), url('../img/capa-house.jpg');
-  height: 400px;
-  background-size: cover;
+  height: 70vh;  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,12 +99,14 @@ header nav a:hover {
 }
 
 .filme-principal .container {
-  width: 70%;
+  width: 40%;
 }
 
 .filme-principal .descricao {
   margin-top: 10px;
   margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 .filme-principal .titulo {
@@ -72,20 +115,40 @@ header nav a:hover {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.botoes {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .botao {
-  background-color: rgba(0, 0, 0, .50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(56, 56, 56, 0.5);
   border: none;
   color: #FFF;
-  padding: 15px 30px;
+  padding: 5px 20px;
   margin-right: 15px;
-  font-size: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: .3s ease all;
 }
 
-.botao:hover {
-  background-color: #fff;
+.botao span {
+  margin-right: 5px;
+  font-size: 40px;
+}
+
+.botao.cta {
+  background-color: #FFF;
   color: #000;
+}
+
+.botao:hover {
+  filter: brightness(0.8);
 }
 
 .botao i {
@@ -99,5 +162,6 @@ header nav a:hover {
 }
 
 .carrosel-filmes {
+  margin-left: 50px;
   margin-top: 5px;
 }
